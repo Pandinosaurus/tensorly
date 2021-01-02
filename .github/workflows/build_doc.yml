@@ -30,11 +30,11 @@ jobs:
           cd doc
           python minify.py
           make html
+          cd ..
       - name: Push doc to website
         if: success()
         run: |
           echo 'Documentation was successfully built, updating the website.'
-          cd ..
 
           echo "-- Cloning doc repo"
           # See https://github.community/t/github-actions-bot-email-address/17204/5
