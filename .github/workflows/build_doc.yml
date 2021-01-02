@@ -41,9 +41,13 @@ jobs:
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions"
           git clone --quiet https://github.com/tensorly/tensorly.github.io doc_folder
+          echo "-- Updating the content"
           cd doc_folder
+          pwd
           git rm -r dev/*
+          echo "Done"
           # mkdir -p dev
+          echo "Copying to folder"
           cp -r ../doc/_build/html/* dev/
 
           echo "Pushing to git"
