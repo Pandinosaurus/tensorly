@@ -43,13 +43,13 @@ jobs:
           git clone --quiet https://github.com/tensorly/tensorly.github.io doc_folder
           cd doc_folder
           git rm -r dev/*
-          mkdir -p dev
+          # mkdir -p dev
           cp -r ../doc/_build/html/* dev/
 
-          echo "Pushinng to git"
+          echo "Pushing to git"
           git add dev
           git commit -m "Github action: auto-update."
-          git push --force --quiet "https://github.com/tensorly/tensorly.github.io" > /dev/null 2>&1
+          git push --force "https://github.com/tensorly/tensorly.github.io"
 
           # # See https://github.community/t/github-actions-bot-email-address/17204/5
           # git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
